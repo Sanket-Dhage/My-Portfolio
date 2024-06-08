@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const Header = () => {
-  const [brandName, setBrandName] = useState("Dhage Sanket Sanjay");
+  const [brandName, setBrandName] = useState("Mr.Sanket");
   const [menuLinks, setMenuLinks] = useState([
     {
       title: "Home",
@@ -25,7 +25,7 @@ const Header = () => {
       id: 4,
     },
     { title: "About",
-      link: "/",
+      link:"/",
       
       id: 4,
      
@@ -33,29 +33,32 @@ const Header = () => {
   ]);
 
   const [actionButton, setActionButton] = useState({
-    title: "Download CV",
+    title: "DownloadCV",
     link: "https://www.linkedin.com/feed/update/urn:li:activity:7191974938197581824/",
   });
 
+ 
   return (
     <>
-      <div className="h-20 border main flex justify-between items-center px-16 bg-gray-100">
-        <div>
+      <div className="h-20 border main flex flex-col sm:flex-row justify-between items-center px-6 sm:px-16 bg-gray-100">
+        <div className="flex items-center">
           {/* brand logo */}
-          <h1 className="text-2xl font-bold">{brandName}</h1>
+          <h1 className="text-2xl font-bold min-w-0 text-center sm:text-left">{brandName}</h1>
         </div>
 
-        <div className="space-x-6">
+        <div className=" flex justify-center sm:justify-start mt-4 sm:mt-0">
           {/* menu links */}
+          <div className="flex flex-wrap space-x-4 sm:space-x-6">
 
           {menuLinks.map((link) => (
             <a key={link.id} href={link.link} className="hover:text-orange-600">
               {link.title}
             </a>
           ))}
+          </div>
 
           {/* 
-          <a href="/about" className="hover:text-orange-600">
+          <a href="/about" className="hover:text-orange-600lx">
             About
           </a>
 
@@ -72,15 +75,16 @@ const Header = () => {
           </a> */}
         </div>
 
-        <div>
+        <div className="flex justify-items-end	 mt-4 sm:mt-0">
           {/* buttons */}
           <a
             href={actionButton.link}
-            className="px-4 py-2 bg-orange-500 shadow  rounded-full text-1xl "
+            className="px-4 py-2 md:px-6 md:py-3 bg-orange-500 shadow rounded-full text-xs sm:text-sm md:text-base lg:text-lg min-w-full sm:min-w-0"
           >
             {actionButton.title}
           </a>
         </div>
+       
       </div>
     </>
   );

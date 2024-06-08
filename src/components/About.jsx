@@ -24,22 +24,22 @@ const About = () => {
           About Me
         </h1>
 
-        <div className="flex items-center">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start">
           {/* image container */}
-          <div className="rounded-full my-2 shadow-lg w-fit">
+          <div className="rounded-full my-2 shadow-lg w-40 h-40 lg:w-64 lg:h-64 mx-auto lg:mx-0">
             <img
-              className="w-fit"
+              className="rounded-full w-full h-full object-cover"
               src={data.image}
               alt="Dhage Sanket Sanjay"
             />
           </div>
           
           {/* text container  */}
-          <div className="w-full  flex justify-center">
-            <div className="space-y-5   w-2/3">
-              <h1 className="text-5xl  font-semibold ">{data.title}</h1>
-              <p>{data.desc1}</p>
-              <p>{data.desc2}</p>
+          <div className="w-full flex justify-center lg:justify-start mt-8 lg:mt-0 lg:ml-8">
+            <div className="space-y-5 w-full px-4 lg:px-0 lg:w-2/3">
+              <h1 className="text-3xl lg:text-5xl font-semibold">{data.title}</h1>
+              <p className="text-lg lg:text-xl">{data.desc1}</p>
+              <p className="text-lg lg:text-xl">{data.desc2}</p>
               <button className="bg-orange-500 px-3 py-2 text-2xl rounded-full shadow-lg">
                 {data.actionButton.title}
               </button>
